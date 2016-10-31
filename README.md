@@ -16,13 +16,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require davidxu/yii2-igt
+php composer.phar require davidxu/yii2-igt "~1.0.0"
 ```
 
 or add
 
 ```
-"davidxu/yii2-igt": "*"
+"davidxu/yii2-igt": "~1.0.0"
 ```
 
 to the require section of your `composer.json` file.
