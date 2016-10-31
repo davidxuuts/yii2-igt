@@ -39,8 +39,8 @@ Once the extension is installed, simply use it in your code by :
  * Will play a sound and a badge (1) will display
  * 
  *   $content = [
- *       'payloadTitle' => '透传测试，静默，应该没声音了',
- *       'payloadContet' => '静静的夜，睡不着觉是吗？',
+ *       'payloadTitle' => 'transmission Title',
+ *       'payloadContet' => 'transmission content here',
  *   ];
  *    $payload = Json::encode($content);
  *    $alertTitle = 'Attention Please';
