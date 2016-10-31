@@ -1,6 +1,5 @@
 {
   "name": "davidxu/yii2-igt",
-  "version": "0.0.1",
   "description": "The iGetui SDK integration for the Yii2 framework and PHP 5.5",
   "type": "library",
   "keywords": ["yii2","extension","igt","getui"],
