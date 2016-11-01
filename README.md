@@ -76,10 +76,9 @@ class PushController extends Controller
 
 Remark
 ------
-Please refer to [Getui official documentation](http://docs.getui.com) and [Local and Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/index.html#//apple_ref/doc/uid/TP40008194-CH3-SW1)
+Please refer to [Getui official documentation](http://docs.getui.com) and [Apple Local and Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/index.html#//apple_ref/doc/uid/TP40008194-CH3-SW1)
 
 
 This package should can be used for other frameworks also.
-
 
 Any other question please contact me at [david.xu.uts@163.com](mailto:david.xu.uts@163.com)
