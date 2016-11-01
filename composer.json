@@ -1,6 +1,6 @@
 {
   "name": "davidxu/yii2-igt",
-  "description": "The iGetui SDK integration for the Yii2 framework and PHP 5.5",
+  "description": "The iGetui SDK integration for the Yii2 framework and PHP 5.4",
   "type": "library",
   "keywords": ["yii2","extension","igt","getui"],
   "license": "MIT",
@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "yiisoft/yii2": "~2.0.0"
+    "php": "~5.4.0"
   },
   "autoload": {
     "psr-4": {

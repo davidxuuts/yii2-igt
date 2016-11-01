@@ -14,7 +14,6 @@ use davidxu\igt\core\IGtSingleMessage;
 use davidxu\igt\core\IGtTarget;
 use davidxu\igt\template\IGtNotificationTemplate;
 use davidxu\igt\template\IGtTransmissionTemplate;
-use yii\web\BadRequestHttpException;
 
 /**
  * Getui Push Messages
@@ -78,7 +77,6 @@ class Getui
      * @param string $alertTitle
      * @param string $alertBody
      * @return mixed
-     * @throws BadRequestHttpException
      */
     public function pushTransmissionAlertToSingle($clientId, $msgContent, $alertBody, $alertTitle)
     {
