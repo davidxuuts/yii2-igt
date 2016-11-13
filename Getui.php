@@ -76,24 +76,30 @@ class Getui
      * @param mixed $msgContent
      * @param string $alertTitle
      * @param string $alertBody
+     * @param integer $badge
+     * @param boolean $isRing
+     * @param integer $transmissionType
      * @return mixed
      */
-    public function pushTransmissionAlertToSingle($clientId, $msgContent, $alertBody, $alertTitle)
+    public function pushTransmissionAlertToSingle($clientId, $msgContent, $alertBody, $alertTitle, $badge = 1, $isRing = true, $transmissionType = 1)
     {
-        $template = $this->templateTransmissionAlert($msgContent, $alertBody, $alertTitle);
+        $template = $this->templateTransmissionAlert($msgContent, $alertBody, $alertTitle, $badge, $isRing, $transmissionType);
         $response = $this->handleTransmissionSingleTemplate($clientId, $template);
         return $response;
     }
 
     /**
-     * @param $msgContent
-     * @param $alertBody
-     * @param $alertTitle
+     * @param mixed $msgContent
+     * @param mixed $alertBody
+     * @param string $alertTitle
+     * @param integer $badge
+     * @param boolean $isRing
+     * @param integer $transmissionType
      * @return mixed|null
      */
-    public function pushTransmissionAlertToApp($msgContent, $alertBody, $alertTitle)
+    public function pushTransmissionAlertToApp($msgContent, $alertBody, $alertTitle, $badge = 1, $isRing = true, $transmissionType = 1)
     {
-        $template = $this->templateTransmissionAlert($msgContent, $alertBody, $alertTitle);
+        $template = $this->templateTransmissionAlert($msgContent, $alertBody, $alertTitle, $badge, $isRing, $transmissionType);
 
         $message = new IGtAppMessage();
         $message->set_isOffline(true);
@@ -132,12 +138,13 @@ class Getui
     /**
      * @param string $alertTitle
      * @param string $alertBody
+     * @param integer $badge
      * @param boolean $isRing
      * @param mixed $msgContent
      * @param integer $transmissionType 1: Start Immediately; 2. Broadcast and waiting for manual starting
      * @return string
      */
-    protected function templateTransmissionAlert($msgContent, $alertBody, $alertTitle = null, $isRing = true, $transmissionType = 1)
+    protected function templateTransmissionAlert($msgContent, $alertBody, $alertTitle, $badge, $isRing, $transmissionType)
     {
         $alertMsg = new DictionaryAlertMsg();
         $alertMsg->body = $alertBody;
@@ -147,8 +154,8 @@ class Getui
         $apnPayload = new IGtAPNPayload();
         $apnPayload->alertMsg = $alertMsg;
         $apnPayload->sound = $isRing ? "default" : "com.gexin.ios.silence";
-        $apnPayload->badge = 1;
-//        $apnPayload->contentAvailable = 1;
+        $apnPayload->badge = $badge;
+        $apnPayload->contentAvailable = 1;
 
         $template = new IGtTransmissionTemplate();
         $template->set_appId($this->appId);
