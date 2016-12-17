@@ -212,7 +212,7 @@ class Getui
         $target->set_appId($this->appId);
         $target->set_clientId($clientId);
 
-        $igt = new IGeTui($this->host, $this->appkey, $this->masterSecret);
+        $igt = new IGetui($this->host, $this->appkey, $this->masterSecret);
         try {
             $response = $igt->pushMessageToSingle($message, $target);
             return $response;
