@@ -108,7 +108,7 @@ class Getui
 //        $message->set_speed(100);
         $message->set_appIdList([$this->appId]);
 
-        $igt = new IGeTui('', $this->appkey, $this->masterSecret);
+        $igt = new IGetui('', $this->appkey, $this->masterSecret);
         return $response = $igt->pushMessageToApp($message);
     }
 
